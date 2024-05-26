@@ -13,13 +13,3 @@ async def cleaner(message: types.Message):
             await message.answer(f'Пожалуйста соблюдайте правила чата!!! {message.from_user.first_name}!')
             await message.delete()
             break
-
-
-
-
-
-
-
-
-
-
