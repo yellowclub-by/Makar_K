@@ -1,5 +1,8 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
+back_btn = KeyboardButton(text='назад')
+
+
 start_kb = ReplyKeyboardMarkup(
     keyboard=[
         [
@@ -13,6 +16,8 @@ start_kb = ReplyKeyboardMarkup(
     ],
     resize_keyboard=True,
     input_field_placeholder='Iphone manager'
+
+
 )
 catalog_kb = ReplyKeyboardMarkup(
     keyboard=[
@@ -27,6 +32,9 @@ catalog_kb = ReplyKeyboardMarkup(
         [
             KeyboardButton(text='iphone 15'),
             KeyboardButton(text='iphone 15 pro')
+        ],
+        [
+            back_btn
         ]
     ],
     resize_keyboard=True,

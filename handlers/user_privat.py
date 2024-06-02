@@ -34,6 +34,16 @@ async def contacts(message: types.Message):
 async def addresses(message: types.Message):
     await message.answer('Пункты выдачи')
 
+
+@user_router.message(F.text.lower() == 'назад')
+async def back_menu(message: types.Message):
+    await message.answer('Главное меню', reply_markup=reply.start_kb)
+
+
+
+
+
+
 # @user_router.message(F.text)
 # @user_router.message(F.photo)
 # @user_router.message(F.text.lower() == 'доставка')
