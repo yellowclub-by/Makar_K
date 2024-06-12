@@ -40,4 +40,5 @@ async def iphone_15(message: types.Message):
 @catalog_router.message(F.text.lower() == 'iphone 15 pro')
 async def iphone_15_pro(message: types.Message):
     photo = FSInputFile('img\catalog\iphone 15 pro.jpg')
-    await message.answer_photo(photo, caption='iphone 15 pro - модель, котора прослужит вам более 5 лет без неудобств ')
+    await message.answer_photo(photo, caption='iphone 15 pro - модель, котора прослужит вам более 5 лет без неудобств')
+

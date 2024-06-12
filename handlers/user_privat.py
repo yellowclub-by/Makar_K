@@ -1,4 +1,4 @@
-from keyboards import reply
+from keyboards import reply, inline
 from aiogram import types, Router, F
 from aiogram.filters import CommandStart, Command
 
@@ -32,7 +32,22 @@ async def contacts(message: types.Message):
 @user_router.message(Command('addresses'))
 @user_router.message(F.text.lower() == 'пункты выдачи')
 async def addresses(message: types.Message):
-    await message.answer('Пункты выдачи')
+    await message.answer('Пункты выдачи', reply_markup=inline.adresses_kb())
+
+
+@user_router.callback_query(F.data.lower().startswith('addresses'))
+async def addresses_types(callback: types.CallbackQuery):
+    query = callback.data.split('_')[1]
+    if query == '1':
+        await callback.message.answer('это первый пункт выдачи')
+    elif query == '2':
+        await callback.message.answer('это второй пункт выдачи')
+    elif query == '3':
+        await callback.message.answer('это третий пункт выдачи')
+    elif query == '4':
+        await callback.message.answer('это четвертый пункт выдачи')
+    await callback.answer()
+
 
 
 @user_router.message(F.text.lower() == 'назад')
