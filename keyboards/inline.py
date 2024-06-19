@@ -14,5 +14,14 @@ InlineKeyboardButton(text='пункт выдачи №1', callback_data='address
     return builder.as_markup()
 
 
+links_kb = InlineKeyboardMarkup(
+    inline_keyboard=[
+        [
+            InlineKeyboardButton(text='Site', url='https://www.apple.com/'),
+            InlineKeyboardButton(text='Telegram', url='tg://resolve?domain=iphone')
+        ]
+    ]
+)
+
 
 
