@@ -23,15 +23,15 @@ catalog_kb = ReplyKeyboardMarkup(
     keyboard=[
         [
             KeyboardButton(text='iphone 13'),
-            KeyboardButton(text='iphone 13 pro')
+            KeyboardButton(text='iphone 13 Pro')
         ],
         [
             KeyboardButton(text='iphone 14'),
-            KeyboardButton(text='iphone 14 pro')
+            KeyboardButton(text='iphone 14 Pro')
         ],
         [
             KeyboardButton(text='iphone 15'),
-            KeyboardButton(text='iphone 15 pro')
+            KeyboardButton(text='iphone 15 Pro')
         ],
         [
             back_btn

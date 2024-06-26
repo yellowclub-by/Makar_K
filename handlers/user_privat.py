@@ -7,7 +7,8 @@ user_router = Router()
 
 @user_router.message(CommandStart())
 async def start_message(message: types.Message):
-    await message.answer('<b>Привет</b>, это <i>бот</i> по продаже <strong>айфонов</strong>, какую <em>модель</em> вы хотели бы купить?',
+    await message.answer('<b>Привет</b>, это <i>бот</i> по продаже <strong>айфонов</strong>, какую <em>модель</em> '
+                         'вы хотели бы купить?',
                          reply_markup=reply.start_kb)
 
 
@@ -20,13 +21,15 @@ async def catalog(message: types.Message):
 @user_router.message(Command('about'))
 @user_router.message(F.text.lower() == 'о нас')
 async def about(message: types.Message):
-    await message.answer('Мы подберем нужный вам айфон по <strong>выгодной цене</strong>', reply_markup=inline.links_kb)
+    await message.answer('Мы подберем нужный вам айфон по <strong>выгодной цене</strong>',
+                         reply_markup=inline.links_kb)
 
 
 @user_router.message(Command('contacts'))
 @user_router.message(F.text.lower() == 'контакты')
 async def contacts(message: types.Message):
-    await message.answer('Наш самый главный спонсор:<strong>+375293688433</strong>')
+    await message.answer('''Наш самый главный спонсор:<strong>+375298590213</strong>  
+<strong>+375296289999</strong>\n@l1l_sovuniya ''')
 
 
 @user_router.message(Command('addresses'))
